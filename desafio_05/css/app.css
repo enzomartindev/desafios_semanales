@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #5975B0;
+    margin: 1vw;
+}
+
+/*header*/
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #BB5397;
+    letter-spacing: 1vw;
+    font-weight: lighter;
+    margin-bottom: 1vh;
+}
+
+.img-header {
+    width: 30vw;
+}
+
+/*main*/
+
+h2 {
+    color: #BB5397;
+    letter-spacing: 0.5vw;
+    font-size: medium;
+    margin-bottom: 1vw;
+}
+
+p {
+    margin-bottom: 1vh;
+}
+
+/*clases*/
+
+.img {
+    width: 25vw;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 1vh;
+}
+
+.description {
+    text-align: left;
+
+}
+
+
+.img-footer {
+    width: 100%;
+}
+
+/*ids*/
+
+#img-1,
+#img-3 {
+    float: right;
+}
+
+#img-2 {
+    float: left;
+}
+
+@media (max-width: 992px) {
+
+    .img {
+        width: 50%;
+    }
+
+    h1 {
+        margin-top: 4vh;
+        margin-bottom: 3vh;
+        letter-spacing: 2vw;
+        text-align: center;
+    }
+
+    h2 {
+        letter-spacing: 1vw;
+        margin-bottom: 3vh;
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        letter-spacing: 3vw;
+        text-align: center;
+    }
+
+    h2 {
+        letter-spacing: 1.5vw;
+        margin-bottom: 2vh;
+        text-align: left;
+    }
+
+    .img {
+        width: 75%;
+    }
+
+    p {
+        margin-bottom: 2vh;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .img {
+        width: 100%;
+    }
+
+    h1 {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        letter-spacing: 2.5vw;
+        text-align: center;
+    }
+
+    h2 {
+        margin-top: 4vw;
+        margin-bottom: 4vw;
+        text-align: left;
+        letter-spacing: 2vw;
+    }
+
+    p {
+        margin-bottom: 2vw;
+    }
+
+}

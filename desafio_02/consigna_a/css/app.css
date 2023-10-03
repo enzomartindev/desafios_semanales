@@ -1,0 +1,52 @@
+* {
+    color: white;
+    background-color: #263238;
+}
+
+h1 {
+    color: #78909c;
+    background-color: white;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+    /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+    font-weight: lighter;
+}
+
+h2 {
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+img {
+    height: auto;
+    border: 5px;
+    border-style: inset;
+    margin-left: 40px;
+
+}
+
+h2[id="aspiradoras"] {
+    color: bisque;
+}
+
+h2[id="celulares"] {
+    color: darkcyan
+}
+
+h2[id="consolas"] {
+    color: azure;
+}
+
+h2[id="home-theaters"] {
+    color: gray;
+}
+
+h2[id="tvs"] {
+    color: tan;
+}

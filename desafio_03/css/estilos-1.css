@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(243, 44, 101);
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.section1 {
+    background-color: rgb(200, 39, 93);
+    padding: 1%;
+    padding-bottom: 40px;
+    border-radius: 5px;
+}
+
+.art-principal {
+    background-color: white;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    background-color: rgb(200, 39, 93);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: white;
+}
+
+h3 {
+    font-size: small;
+    text-align: right;
+    color: rgb(139, 57, 78);
+    border-bottom: dotted 1px;
+    padding-top: 2%;
+}
+
+.imgmain {
+    width: 100%;
+}
+
+a {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: small;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.botoncompra {
+    text-align: center;
+    padding: 10px;
+}
+
+.pie {
+    background-color: rgb(245, 112, 150);
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: rgb(200, 39, 93);
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 1%;
+}
+
+.card {
+    width: 26vw;
+    margin: 5px;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px;
+    ;
+}

@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D9D7D4;
+    color: #785545;
+}
+
+main {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+header img {
+    width: 100%;
+}
+h1 {
+    color: #785545;
+    font-weight: bolder;
+}
+
+h2,
+h3 {
+    background-color: #785545;
+    color: #DDBEB0;
+}
+
+h3 {
+    color: yellow;
+}
+
+a:link {
+    font-weight: bold;
+    color: coral;
+}
+
+a:hover {
+    color: blue;
+    font-weight: bold;
+}
+
+article a:hover{
+    color:aqua;
+
+}
+article a:visited{
+    color: brown;
+}
+
+footer{
+    text-align: center;
+}

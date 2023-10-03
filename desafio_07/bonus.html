@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Ejercicio</h1>
+    </header>
+
+    <main>
+        <form action="" method="get">
+            <div class="contenedor2">
+                <div class="integranteb">
+                    <h2>Primer integrante</h2>
+                    <div>
+                        <label for="id-nombre1">Primer Nombre:</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="nombre1" id="id-nombre1" minlength="5" maxlength="35"
+                            placeholder="Ingresa tu primer nombre" required>
+                    </div>
+
+                    <div>
+                        <label for="id-nombre2">Segundo Nombre:</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="nombre2" id="id-nombre2" minlength="5" maxlength="35"
+                            placeholder="Ingresa tu segundo nombre">
+                    </div>
+                    <div>
+                        <label for="id-apellido1">Primer Apellido:</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="apellido1" id="id-apellido1" minlength="5" maxlength="35"
+                            placeholder="Ingresa tu primer apellido" required>
+                    </div>
+                    <div>
+                        <label for="id-apellido2">Segundo Apellido:</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="apellido2" id="id-apellido2" minlength="5" maxlength="35"
+                            placeholder="Ingresa tu segundo apellido">
+                    </div>
+                    <div class="divCompletar">
+                        <button type="button" id="completar-A" onclick="completarA()">Completar</button>
+                    </div>
+                </div>
+                <div class="integranteb">
+                    <h2>Segundo integrante</h2>
+                    <div>
+                        <label for="id-nombre1b">Primer Nombre</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="nombre1b" id="id-nombre1b" minlength="5" maxlength="35"
+                            placeholder="Ingresa tu primer nombre" required>
+                    </div>
+                    <div>
+                        <label for="id-nombre2b">Segundo Nombre</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="nombre2b" id="id-nombre2b" minlength="5" maxlength="35"
+                            placeholder="Ingresa tu segundo nombre">
+                    </div>
+                    <div>
+                        <label for="id-apellido1b">Primer Apellido</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="apellido1b" id="id-apellido1b" minlength="5"
+                            maxlength="35" placeholder="Ingresa tu primer apellido" required>
+                    </div>
+                    <div>
+                        <label for="id-apellido2b">Segundo Apellido</label>
+                    </div>
+                    <div>
+                        <input class="dato" type="text" name="apellido2b" id="id-apellido2b" minlength="5"
+                            maxlength="35" placeholder="Ingresa tu segundo apellido">
+                    </div>
+                    <div class="divCompletar">
+                        <button type="button" id="completar-B" onclick="completarB()">Completar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="divSubmit">
+            <button type="button" id="id-submit" onclick="Submit()">Submit</button>
+            <button type="button" id="id-clear" onclick="limpiar()">Limpiar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023</p>
+    </footer>
+    <script src="./js/bonus.js"></script>
+
+</body>
+
+</html>

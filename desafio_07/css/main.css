@@ -1,0 +1,153 @@
+/*Ejercicio 2*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /*background-color: #0093E9;
+    background-image: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);*/
+    background-image: linear-gradient(90deg, #65FDF0 10%, #1D6FA3 100%);
+
+}
+
+main {
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    margin: 1vw 20vw 1vw 20vw;
+    padding: 1vw;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin: 1vw 20vw 0 20vw;
+    padding-bottom: 0.3vw;
+    ;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+dt {
+    font-weight: bold;
+    padding: 1vw 0 0.5vw 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+dd {
+    font-style: italic;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1vw;
+    padding: 1vw;
+    border-radius: 5px;
+
+}
+
+.integrante {
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 0vw 1vw 1vw 1vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.integrante h2 {
+    text-decoration: underline;
+}
+
+footer p {
+    text-align: center;
+    margin-top: 1vh;
+    ;
+}
+
+/*bonus.html*/
+.formulario {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2vh;
+    align-content: stretch;
+}
+
+.contenedor2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.integranteb {
+    display: flex;
+    flex-direction: column;
+}
+
+.divCompletar {
+    margin: 2vh 0 2vh 0;
+    text-align: center;
+}
+
+.divSubmit {
+    margin: 2vh 0 2vh 0;
+    text-align: center;
+}
+
+.dato, .dato:focus {
+    border-top: none;
+    border-left: none;
+    border-right: none;    
+    outline: none;    
+
+}
+
+@media (max-width: 768px) {
+    .contenedor2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+
+    }
+
+    .integranteb {
+        flex-direction: column;
+
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contenedor {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+
+    }
+
+    .integranteb {
+        flex-direction: column;
+
+    }
+
+    main {
+        margin: 1vw 2vw 1vw 2vw;
+
+    }
+
+    h1 {
+        margin: 1vw 2vw 1vw 2vw;
+    }
+
+}
