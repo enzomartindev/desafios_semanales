@@ -1,3 +1,241 @@
-body{
-    background-color: aqua;
+/*
+#b7094cff;--amaranth-purple
+#a01a58ff;--murrey
+#892b64ff;--byzantium
+#723c70ff;--finn
+#5c4d7dff;--ultra-violet
+#455e89ff;--yinmn-blue
+#2e6f95ff;--ucla-blue
+#1780a1ff;--cerulean
+#0091adff;--blue-munsell
+*/
+@font-face {
+    font-family: "sakana";
+    src: url("../fonts/Sakana.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "xolonium";
+    src: url("../fonts/Xolonium-Regular.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/fondo-futurista.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+
+    text-align: center;
+}
+
+h1 {
+    margin-top: 1vh;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 1px solid #b7094cff;
+    width: 60vw;
+    color: azure;
+    padding: 2vh 0 1vh 0;
+    font-family: "sakana";
+    font-size: 40px;
+
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5vh;
+    border-radius: 5px;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    width: 60vw;
+    border: 1px solid #b7094cff;
+}
+
+fieldset {
+    justify-items: stretch;
+    margin-bottom: 2vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 2vh;
+    border: 2px solid;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(137, 43, 100, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    color: azure;
+    font-family: "xolonium";
+    font-size: smaller;
+}
+
+legend {
+    background-color: azure;
+    border-radius: 5px;
+    padding: 1vh;
+    color: #b7094cff;
+    border: 1px solid #b7094cff;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1vh;
+    width: 50vw;
+
+}
+
+.datos input[type="text"],
+.datos input[type="email"],
+.datos select,
+.datos textarea {
+    width: 50vw;
+    outline: none;
+    border: 1px solid #0091adff;
+    border-radius: 5px;
+    height: 3vh;
+}
+
+.datos-personales textarea {
+    resize: vertical;
+    height: 5vh;
+}
+
+
+
+.botones button,
+.cambiarestilo button,
+.cambiarestilo select {
+    background-color: #2e6f95ff;
+    border-radius: 5px;
+    border: 1px solid #b7094cff;
+    padding: 1vh;
+    margin-top: 2vh;
+    color: azure;
+    font-family: "xolonium";
+    outline: none;
+}
+
+.cambiarestilo button:hover,
+.botones button:hover {
+    background-color: #b7094cff;
+    color: #e8e1d7;
+    cursor: pointer;
+}
+
+.actividades {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.actividades div {
+    margin-bottom: 1vh;
+}
+
+.condiciones {
+    font-family: "xolonium";
+    font-size: smaller;
+}
+
+@media (max-width: 992px) {
+
+    header {
+        width: auto;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 90vw;
+        font-size: 2.5em;
+        resize: none;
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    .datos input[type="text"],
+    .datos input[type="email"],
+    .datos select,
+    .datos textarea {
+        width: 100%
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    header {
+        width: auto;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 90vw;
+        font-size: 2.5em;
+        resize: none;
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    .datos input[type="text"],
+    .datos input[type="email"],
+    .datos select,
+    .datos textarea {
+        width: 100%
+    }
+
+    .sexos {
+        margin-top: 1vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 0;
+        gap: 1vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 90vw;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 100%;
+        font-size: 2.5em;
+        resize: none;
+
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    .datos input[type="text"],
+    .datos input[type="email"],
+    .datos select,
+    .datos textarea {
+        width: 100%
+    }
+
+    .sexos {
+        margin-top: 1vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 0;
+        gap: 1vw;
+    }
 }

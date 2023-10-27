@@ -1,3 +1,354 @@
+/*
+#e9311a naranja retro
+#80b5b3 celeste retro
+#026c80 azul claro retro
+#064c72 azul retro
+#e8e1d7 crema
+*/
+@font-face {
+    font-family: "BoogieNightsShadow";
+    src: url("../fonts/BoogieNightsShadowNF.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "octin-vintage";
+    src: url("../fonts/octin-vintage.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 60vw;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    padding: 0vw;
+    width: 60vw;
+    font-family: "BoogieNightsShadow", "sans-serif";
+    margin: 2vh 0 2vh 0;
+    border: 1px solid;
+    border-color: transparent transparent #e8e1d7 transparent;
+}
+
+/*Imagen al principio del H1*/
+h1::before {
+    content: url("../images/biceps-retro-64-izq.png");
+}
+
+.cambiarestilo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap:0.3vw;
+}
+
+.cambiarestilo button {
+    background-color: #e8e1d7;
+    padding: 1vh;
+    font-family: 'octin-vintage', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #064c72;
+    margin-top: 1vh;
+}
+
 body {
-    background-color: lightseagreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #80b5b3;
+    margin-bottom: 1vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+    border-radius: 5px;
+    padding-top: 5vh;
+    padding-bottom: 1vh;
+    background-color: #e8e1d7;
+    background-image: url("../images/noisy-texture-beige.png");
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+fieldset {
+    background-color: #80b5b3;
+    padding: 1vh;
+    width: 40vw;
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    border-color: #064c72;
+    font-family: "octin-vintage", "sans-serif";
+    color: #064c72;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+legend {
+    background-image: url("../images/noisy-texture-lighrorange.png");
+    padding: 1vh;
+    border-radius: 5px;
+    color: #064c72;
+    font-weight: bold;
+    border: 1px solid #e9311a;
+    ;
+}
+
+.datos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #e8e1d7;
+    margin-bottom: 0.5vh;
+}
+
+input,
+select,
+textarea {
+    text-align: left;
+    width: 20vw;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    height: 2.5vh;
+    margin-bottom: 0.2vh;
+}
+
+textarea {
+    resize: vertical;
+    height: 5vh;
+}
+
+.datos-personales .datos div:first-of-type {
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+
+.datos-personales .datos:last-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+}
+
+.datos div {
+    align-items: flex-end;
+}
+
+
+.datos-personales .sexos {
+    /*display: grid;
+    grid-template-columns: 1fr 5fr;
+    align-content: start;*/
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5vh;
+
+}
+
+.datos-personales .sexos input[type="radio"] {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-items: flex-end;
+}
+
+
+.actividades p {
+    margin-bottom: 2vh;
+}
+
+.actividades div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    align-content: start;
+    margin-bottom: 1em;
+}
+
+.actividades div:nth-of-type(4) {
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    align-content: start;
+}
+
+.actividades input[type="checkbox"] {
+    width: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.botones button,
+.cambiarestilo button,
+#id-select-estilos {
+    color: #e8e1d7;
+    background-color: #064c72;
+    border: 1px solid #4d6d63;
+    padding: 1vh;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#id-select-estilos{
+    width: auto;
+    height: min-content;
+    font-family: "octin-vintage", "sans-serif";
+    align-self: flex-end;
+    outline: none;
+    margin: 0;
+}
+
+.condiciones input[type="checkbox"] {
+    width: auto;
+    height: auto;
+}
+
+.condiciones:nth-of-type(5) {
+    margin: 1vh 0 1vh 0;
+}
+
+.cambiarestilo button:hover,
+.botones button:hover {
+    background-color: #e9311a;
+    color: #e8e1d7;
+    cursor: pointer;
+}
+
+.sedes {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 992px) {
+
+    header {
+        width: 90vw;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 100%;
+        font-size: 3em;
+        resize: none;
+        margin-left: 0;
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    fieldset {
+        width: 85vw;
+    }
+
+    fieldset label {
+        width: min-content;
+    }
+
+    fieldset input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 50vw;
+    }
+
+    .sedes {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        width: 90vw;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 100%;
+        font-size: 2.7em;
+        resize: none;
+        margin-left: 0;
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    fieldset {
+        width: 85vw;
+    }
+
+    fieldset label {
+        width: min-content;
+    }
+
+    fieldset input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 50vw;
+    }
+
+    .sedes {
+        display: flex;
+        flex-direction: row;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 90vw;
+    }
+
+    h1 {
+        display: inline-block;
+        width: 100%;
+        font-size: 2.5em;
+        resize: none;
+    }
+
+    h1 img {
+        width: 0.8em;
+    }
+
+    h1::before {
+        content: url("../images/biceps-retro-32-izq.png");
+    }
+
+    main {
+        width: 90vw;
+    }
+
+    fieldset {
+        width: 85vw;
+    }
+
+    fieldset label {
+        width: min-content;
+    }
+
+    fieldset input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 50vw;
+    }
+
+    .sedes {
+        display: flex;
+        flex-direction: column;
+    }
 }

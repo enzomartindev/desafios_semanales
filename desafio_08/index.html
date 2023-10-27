@@ -1,128 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Afiliación</title>
     <link rel="stylesheet" href="css/estilos.css" id="id-estilo">
+
 </head>
 
 <body>
     <header>
-        <div>
-            <h1>Vení al Gym!
-                <img src="./images/musculo.png" alt="">
-            </h1>
-
-        </div>
         <div class="cambiarestilo">
             <button type="button" id="id-cambiar-estilo" onclick="cambiarEstilo()">Cambiar Estilo</button>
+            <button type="button" id="id-cambiarEstiloRandom" onclick="cambiarEstiloRandom()">🎲</button>
+            <button type="button" id="id-recordar" onclick="recordar()">Recordar</button>
+            <select name="estilos" id="id-select-estilos" onchange="selectEstilo()">
+                <option value="no seleccionado" disabled selected>-Seleccionar Estilo-</option>
+                <option value="css/estilos.css">Clásico </option>
+                <option value="css/estilos-retro.css">Retro</option>
+                <option value="css/estilos-futuro.css">Futurista</option>
+                <option value="">Ninguno</option>
+            </select>
+        </div>
+        <h1>Vení al Gym!
+            <img src="./images/musculo.png" alt="" id="id-h1icon">
+        </h1>
         </div>
     </header>
     <main>
-
-        <fieldset class="datos-personales">
-            <legend>🙋‍♂️ Datos Personales 👀</legend>
-            <div class="datos">
-                <label for="id-nombre">Nombre:*</label>
-                <input type="text" name="nombre" id="id-nombre">
-            </div>
-            <div class="datos">
-                <label for="id-apellido">Apellido:*</label>
-                <input type="text" name="apellido" id="id-apellido">
-            </div>
-            <div class="datos">
-                <label for="id-dni">Documento:*</label>
-                <input type="text" name="dni" id="id-dni">
-            </div>
-            <div class="datos">
-                <label for="id-nacionalidad">Nacionalidad:*</label>
-                <select name="nacionalidad" id="id-nacionalidad" value="Seleccionar valor">
-                    <option value="" disabled selected>- Seleccionar -</option>
-                    <option value="argentina">Argentina</option>
-                    <option value="chile">Chile</option>
-                    <option value="uruguay">Uruguay</option>
-                    <option value="brasil">Brasil</option>
-                </select>
-            </div>
-            <div class="datos">
-                <label for="id-contanos">Contanos un poco de vos...</label>
-                <textarea name="contanos" id="id-contanos" cols="20" rows="2"></textarea>
-            </div>
-            <div class="datos">
-                <div>
-                    <label>Sexo:*</label>
+        <form action="">
+            <fieldset class="datos-personales">
+                <legend>🙋‍♂️ Datos personales 👀</legend>
+                <div class="datos">
+                    <label for="id-nombre">Nombre:*</label>
+                    <input type="text" name="nombre" id="id-nombre" autofocus required>
                 </div>
-                <div class="sexos">
-                    <input type="radio" name="sexo" id="id-masculino" checked>
-                    <label for="id-masculino">Masculino</label>
-                    <input type="radio" name="sexo" id="id-femenino">
-                    <label for="id-femenino">Femenino</label>
-                    <input type="radio" name="sexo" id="id-otro">
-                    <label for="id-otro">Otro</label>
+                <div class="datos">
+                    <label for="id-apellido">Apellido:*</label>
+                    <input type="text" name="apellido" id="id-apellido" required>
                 </div>
-            </div>
-        </fieldset>
-        <div class="separador"></div>
-        <fieldset class="datos-contacto">
-            <legend>📱 Datos de contacto 📧</legend>
-            <div class="datos">
-                <label for="id-telefono">Teléfono:</label>
-                <input type="text" name="telefono" id="id-telefono" placeholder="Código de área y número">
-            </div>
-            <div class="datos">
-                <label for="correo">Dirección de correo electrónico:*</label>
-                <input type="email" name="correo" id="id-email" placeholder="Ej: mail@gmail.com">
-            </div>
+                <div class="datos">
+                    <label for="id-dni">Documento:*</label>
+                    <input type="text" name="dni" id="id-dni" required>
+                </div>
+                <div class="datos">
+                    <label for="id-nacionalidad">Nacionalidad:*</label>
+                    <select name="nacionalidad" id="id-nacionalidad" value="Seleccionar valor" required>
+                        <option value="" disabled selected>- Seleccionar -</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="brasil">Brasileña</option>
+                        <option value="uruguay">Uruguaya</option>
+                        <option value="otra">Otra</option>
+                    </select>
+                </div>
+                <div class="datos">
+                    <label for="id-contanos">Contanos un poco de vos...</label>
+                    <textarea name="contanos" id="id-contanos" cols="20" rows="2"></textarea>
+                </div>
+                <div class="datos">
+                    <div>
+                        <p>Sexo:*</p>
+                    </div>
+                    <div class="sexos">
+                        <input type="radio" name="sexo" id="id-masculino" checked>
+                        <label for="id-masculino">Masculino</label>
+                        <input type="radio" name="sexo" id="id-femenino">
+                        <label for="id-femenino">Femenino</label>
+                        <input type="radio" name="sexo" id="id-otro">
+                        <label for="id-otro">Otro</label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="separador"></div>
+            <fieldset class="datos-contacto">
+                <legend>📱 Datos de contacto 📧</legend>
+                <div class="datos">
+                    <label for="id-telefono">Teléfono:</label>
+                    <input type="text" name="telefono" id="id-telefono" placeholder="Código de área y número">
+                </div>
+                <div class="datos">
+                    <label for="correo">Dirección de correo electrónico:*</label>
+                    <input type="email" name="correo" id="id-email" placeholder="Ej: mail@gmail.com" required>
+                </div>
 
-        </fieldset>
-        <div class="separador"></div>
-        <fieldset class="actividades">
-            <legend>🚴‍♂️ Actividades 🤸‍♂️</legend>
-            <p>Por favor, indicá cuáles actividades te interesan.</p>
-            <div>
-                <p>Sede Palermo:</p>
+            </fieldset>
+            <div class="separador"></div>
+            <fieldset class="actividades">
+                <legend>🚴‍♂️ Actividades 🤸‍♂️</legend>
+                <p>Por favor, indicá cuáles actividades te interesan.</p>
+                <section class="sedes">
+                    <section>
+                        <div>
+                            <p>Sede Palermo:</p>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="palermo-basquet" id="id-palermo-basquet">
+                            <label for="id-palermo-basquet">Básquet</label>
+                            <input type="checkbox" name="palermo-boxeo" id="id-palermo-boxeo">
+                            <label for="id-palermo-boxeo">Boxeo</label>
+                            <input type="checkbox" name="palermo-futbol" id="id-palermo-futbol">
+                            <label for="id-palermo-futbol">Fútbol</label>
+                            <input type="checkbox" name="palermo-tenis" id="id-palermo-tenis">
+                            <label for="id-palermo-tenis">Tenis</label>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <p>Sede Rosario:</p>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="rosario-basquet" id="id-rosario-basquet">
+                            <label for="id-rosario-basquet">Básquet</label>
+                            <input type="checkbox" name="rosario-futbol" id="id-rosario-futbol">
+                            <label for="id-rosario-futbol">Fútbol</label>
+                            <input type="checkbox" name="rosario-rugby" id="id-rosario-rugby">
+                            <label for="id-rosario-rugby">Rugby</label>
+                            <input type="checkbox" name="rosario-voley" id="id-rosario-voley">
+                            <label for="id-rosario-voley">Voley</label>
+                        </div>
+                    </section>
+                </section>
+            </fieldset>
+            <div class="condiciones">
+                <input type="checkbox" name="" id="id-acepto-condiciones" required>
+                <label for="id-acepto-condiciones">Acepto las condiciones*</label>
             </div>
-            <div>
-                <label for="id-palermo-basquet">Básquet</label>
-                <input type="checkbox" name="palermo-basquet" id="id-palermo-basquet">
-                <label for="id-palermo-boxeo">Boxeo</label>
-                <input type="checkbox" name="palermo-boxeo" id="id-palermo-boxeo">
-                <label for="id-palermo-futbol">Fútbol</label>
-                <input type="checkbox" name="palermo-futbol" id="id-palermo-futbol">
-                <label for="id-palermo-tenis">Tenis</label>
-                <input type="checkbox" name="palermo-tenis" id="id-palermo-tenis">
+            <div class="condiciones">
+                <input type="checkbox" name="" id="id-recibir-novedades" checked>
+                <label for="id-recibir-novedades">Deseo recibir novedades</label>
             </div>
-            <div>
-                <p>Sede Rosario:</p>
+            <div class="condiciones">
+                <p>*: Campo obligatorio.</p>
             </div>
-            <div>
-                <label for="id-rosario-basquet">Básquet</label>
-                <input type="checkbox" name="rosario-basquet" id="id-rosario-basquet">
-                <label for="id-rosario-futbol">Fútbol</label>
-                <input type="checkbox" name="rosario-futbol" id="id-rosario-futbol">
-                <label for="id-rosario-rugby">Rugby</label>
-                <input type="checkbox" name="rosario-rugby" id="id-rosario-rugby">
-                <label for="id-rosario-voley">Voley</label>
-                <input type="checkbox" name="rosario-voley" id="id-rosario-voley">
+            <div class="botones">
+                <button type="submit" id="id-iniciar-afilicacion">Iniciar afiliación</button>
+                <button type="button" id="id-restablecer" onclick="btnRestablecer()">Restablecer</button>
             </div>
-        </fieldset>
-        <div class="condiciones">
-            <input type="checkbox" name="" id="id-acepto-condiciones">
-            <label for="id-acepto-condiciones">Acepto las condiciones*</label>
-        </div>
-        <div class="condiciones">
-            <input type="checkbox" name="" id="id-acepto-condiciones" checked>
-            <label for="id-acepto-condiciones">Deseo recibir novedades</label>
-        </div>
-        <div class="condiciones">
-            <p>*: Campo obligatorio.</p>
-        </div>
-        <div class="botones">
-            <button type="button" id="id-iniciar-afilicacion">Iniciar Afiliación</button>
-            <button type="button" id="id-restablecer">Restablecer</button>
-        </div>
+        </form>
     </main>
     <footer>
 

@@ -1,10 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-main {
+* {
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: #a6bdb8;
+}
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2vh;
+
 }
 
 body {
@@ -18,7 +28,7 @@ body {
 
 .separador {
     border-top: 10px dotted #d6e2de;
-    width: 18vw;
+    width: 180px;
     margin: 2vh 5vw 2vh 5vw;
 }
 
@@ -26,9 +36,9 @@ h1 {
     color: white;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    border: 15px solid;
+    border: 12px solid;
     border-color: #4d6d63 transparent #4d6d63 transparent;
-    width: 60vw;
+    width: 50vw;
     padding: 0.5vh 0 0.5vw 0;
 
 }
@@ -51,19 +61,22 @@ legend {
     background-color: #d6e2de;
     border-radius: 5px 5px 5px 5px;
     margin-bottom: 1vh;
-    width: 60vw;
+    width: 50vw;
 }
 
 .datos {
     margin: 2vh 2vw 1vh 2vw;
 }
 
-.datos label {
+.datos label,
+p {
     display: flex;
     order: 1;
     justify-content: center;
     margin-bottom: 1vh;
+
 }
+
 
 .datos input[type="text"],
 input[type="email"],
@@ -72,8 +85,29 @@ textarea {
     border-radius: 5px;
     height: 3vh;
     border: 1px solid #4d6d63;
+    text-align: right;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.datos input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    background-color: #4d6d63;
+    outline: none;
+    border: 1px solid black;
+}
+
+.datos input[type="text"]:focus::placeholder,
+input[type="email"]:focus::placeholder {
+    color: lightgray;
+}
 
 
+fieldset:focus-within {
+    background-color: #a6bdb8
 }
 
 .datos select {
@@ -111,31 +145,127 @@ input[type="email"] {
     align-items: flex-start;
 }
 
+.actividades p:nth-child(2) {
+    order: 0;
+    font-size: smaller;
+}
+
 .condiciones {
     color: white;
     align-self: flex-start;
 }
 
 .botones button,
-.cambiarestilo button {
+.cambiarestilo button,
+#id-select-estilos {
     background-color: #2b3d37;
-    padding: 1vw;
+    padding: 1vh;
     color: #d6e2de;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     border-radius: 5px;
-    border: 1px solid #d6e2de;
-    transition-property: background-color;
-    transition-duration: 1s;
+    border: 1px solid #4d6d63;
+
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
 }
 
 .cambiarestilo {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    gap: 0.3vh;
 }
 
-.cambiarestilo button:hover {
-    background-color: #d6e2de;
+.cambiarestilo button:hover,
+.botones button:hover {
+    display: block;
+    background-color: #a6bdb8;
     color: #212121;
+    cursor: pointer;
+}
+
+.sedes div {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+
+}
+
+/**/
+#id-select-estilos {
+    /*width: auto;*/
+    outline: none;
+}
+
+/**/
+
+@media (max-width: 992px) {
+
+    h1 {
+        width: 70vw;
+        min-width: 300px;
+    }
+
+    .datos-personales,
+    .datos-contacto,
+    .actividades {
+        width: 70vw;
+    }
+
+    .datos input[type="text"],
+    .datos input[type="email"],
+    .datos textarea,
+    .datos select {
+        width: 55vw;
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        width: 80vw;
+    }
+
+    .datos-personales,
+    .datos-contacto,
+    .actividades {
+        width: 80vw;
+    }
+
+    .datos input[type="text"],
+    .datos input[type="email"],
+    .datos textarea,
+    .datos select {
+        width: 65vw;
+
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        width: 90vw;
+        min-width: 200px;
+    }
+
+    .datos-personales,
+    .datos-contacto,
+    .actividades {
+        width: 90vw;
+        min-width: 200px;
+    }
+
+    .datos input[type="text"],
+    .datos input[type="email"],
+    .datos textarea,
+    .datos select {
+        width: 75vw;
+        min-width: 200px;
+
+    }
 }
