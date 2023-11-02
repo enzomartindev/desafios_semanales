@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background-color: #000;
+}
+html body {
+  height: 100%;
+  padding-top: 30px;
+  background: #000;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(15, 15, 15) 100%);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 40px;
+}
+html body h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 7px hsl(0, 50%, 50%);
+}
+html body h1 .boton {
+  background-color: #000;
+  border: 1px solid #fff;
+  text-shadow: 0 0 7px hsl(0, 50%, 50%);
+  font-size: x-large;
+  padding: 1vh;
+  width: fit-content;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 7px hsl(0, 50%, 50%);
+}
+html body h1 .boton:hover {
+  background-color: #fff;
+  color: hsl(0, 50%, 50%);
+  border-color: hsl(0, 50%, 50%);
+  cursor: pointer;
+}
+html body h1 .btnPresionado {
+  background-color: rgb(29, 28, 28);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+  color: rgb(53, 52, 52);
+  text-decoration: none;
+  transition: all 250ms linear;
+  font-size: x-large;
+  border-radius: 5px;
+  padding: 1vh;
+  text-shadow: none;
+}
+html body h1 > strong {
+  font-style: italic;
+}
+html body #cajas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  margin: 20px auto 0;
+  gap: 20px;
+}
+html body #cajas > div {
+  width: 200px;
+  height: 200px;
+  border: 10px solid #000;
+  transition: background-position 0.9s linear 2s, border-bottom-color 1.2s, background-color 0.5s;
+  transition-delay: 0.4s;
+  background-color: #000;
+  background-position: -180px -40px;
+  background-repeat: no-repeat;
+}
+html body #cajas > div[title=Presentado] {
+  background-position: 20px 20px;
+  background-color: #fff;
+  border-bottom-color: #fff;
+}
+html body #cajas > div:after {
+  transition: background-position 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.7s, box-shadow 0.2s linear 0.7s;
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: url("../img/cortina.png") -100px -2px no-repeat;
+  position: absolute;
+}
+html body #cajas > div[title=Presentado]:after {
+  background-position: 100px -2px;
+  box-shadow: -19px 20px 36px 5px hsla(0, 100%, 100%, 0.5);
+}
+html body #cajas > div:not([title=Presentado]):hover:after {
+  transition: background-position 1s;
+  transition-delay: 0s;
+  background-position: -80px -2px;
+}
+html body #mario {
+  background: url("../img/mario.png");
+}
+html body #luigi {
+  background: url("../img/luigi.png");
+}
+html body #bowser {
+  background: url("../img/bowser.png");
+}
+html body #peach {
+  background: url("../img/peach.png");
+}
+html body #yoshi {
+  background: url("../img/yoshi.png");
+}
+html body #toad {
+  background: url("../img/toad.png");
+}
+html body #toadette {
+  background: url("../img/toadette.png");
+}
+html body #daisy {
+  background: url("../img/daisy.png");
+}/*# sourceMappingURL=main.css.map */

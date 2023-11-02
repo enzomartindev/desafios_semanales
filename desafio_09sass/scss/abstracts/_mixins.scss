@@ -1,0 +1,99 @@
+@use "../abstracts/variables" as var;
+@use "../base/typography" as font;
+
+@mixin title() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var.$colorWhite;
+    text-shadow: 0 0 7px var.$colorBrown;
+}
+
+@mixin body() {
+    height: 100%;
+    padding-top: 30px;
+    background: var.$colorBlack;
+    background: linear-gradient(0deg, var.$colorGradientInit 0%, var.$colorGradientEnd 100%);
+    font-family: font.$BodyFont;
+    font-size: 40px;
+
+}
+
+@mixin button {
+    background-color: var.$colorBlack;
+    border: 1px solid var.$colorWhite;
+    text-shadow: 0 0 7px var.$colorBrown;
+    font-size: x-large;
+    padding: 1vh;
+    width: fit-content;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 7px var.$colorBrown;
+}
+
+@mixin buttonHover($cursor) {
+    background-color: var.$colorWhite;
+    color: var.$colorBrown;
+    border-color: var.$colorBrown;
+    cursor: $cursor;
+}
+
+@mixin buttonPressed() {
+    background-color: var.$buttonPressedBackground;
+    border: 1px solid var.$buttonPressedBorder;
+    box-shadow: 1px 1px 2px var.$buttonPressedBoxShadow;
+    color: var.$buttonPressedColor;
+    text-decoration: none;
+    transition: all 250ms linear;
+    font-size: x-large;
+    border-radius: 5px;
+    padding: 1vh;
+    text-shadow: none;
+}
+
+@mixin boxes() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 20px auto 0;
+    gap: 20px;
+}
+
+@mixin boxesDiv() {
+    width: 200px;
+    height: 200px;
+    border: 10px solid var.$colorBlack;
+    transition: background-position .9s linear 2s, border-bottom-color 1.2s, background-color .5s;
+    transition-delay: .4s;
+    background-color: var.$colorBlack;
+    background-position: -180px -40px;
+    background-repeat: no-repeat;
+}
+
+@mixin boxesDivShowed() {
+    background-position: 20px 20px;
+    background-color: var.$colorWhite;
+    border-bottom-color: var.$colorWhite;
+}
+
+@mixin boxesDivAfter() {
+    transition: background-position .8s cubic-bezier(0.18, 0.89, 0.32, 1.28) .7s, box-shadow .2s linear .7s;
+    content: "";
+    width: 200px;
+    height: 200px;
+    background: url('../img/cortina.png') -100px -2px no-repeat;
+    position: absolute;
+}
+
+@mixin boxesDivShowedAfter() {
+    background-position: 100px -2px;
+    box-shadow: -19px 20px 36px 5px var.$colorSombraBlanca;
+}
+
+@mixin boxesDivNotShowedHoverAfter() {
+    transition: background-position 1s;
+    transition-delay: 0s;
+    background-position: -80px -2px;
+}

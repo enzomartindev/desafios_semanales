@@ -1,0 +1,93 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+html {
+    height: 100%;
+    background-color: var.$colorBlack;
+
+    body {
+        @include mix.body();
+
+        h1 {
+            @include mix.title();
+
+            .boton {
+                @include mix.button();
+
+            }
+
+            .boton:hover {
+                @include mix.buttonHover(pointer);
+            }
+
+
+            .btnPresionado {
+                @include mix.buttonPressed();
+            }
+        }
+
+        h1>strong {
+            font-style: italic;
+        }
+
+        #cajas {
+            @include mix.boxes();
+        }
+
+        #cajas>div {
+            @include mix.boxesDiv();
+        }
+
+        #cajas>div[title="Presentado"] {
+            @include mix.boxesDivShowed();
+        }
+
+        #cajas>div:after {
+            @include mix.boxesDivAfter();
+        }
+
+        #cajas>div[title="Presentado"]:after {
+            @include mix.boxesDivShowedAfter();
+        }
+
+        #cajas>div:not([title="Presentado"]):hover:after {
+            @include mix.boxesDivNotShowedHoverAfter();
+
+        }
+
+        #mario {
+            background: url('../img/mario.png');
+        }
+
+        #luigi {
+            background: url('../img/luigi.png');
+        }
+
+        #bowser {
+            background: url('../img/bowser.png');
+        }
+
+        #peach {
+            background: url('../img/peach.png');
+        }
+
+        #yoshi {
+            background: url('../img/yoshi.png');
+        }
+
+        #toad {
+            background: url('../img/toad.png');
+        }
+
+        #toadette {
+            background: url('../img/toadette.png');
+        }
+
+        #daisy {
+            background: url('../img/daisy.png');
+        }
+
+
+    }
+
+}
