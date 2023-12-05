@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./css/app.css">
+</head>
+
+<body class="body">
+
+    <header class="header">
+        <h1 class="header-title">Calculadora</h1>
+    </header>
+
+    <main>
+        <section class="section-all">
+            <div class="section section-contain-number1">
+                <label for="id-number1" class="number">Numero 1</label>
+                <input type="text" id="id-number1">
+            </div>
+            <div class="section section-contain-number2">
+                <label for="id-number2" class="number">Numero 2</label>
+                <input type="text" id="id-number2">
+            </div>
+
+            <div class="section section-contain-operations">
+                <button class="section-operations" id="id-sumar">+</button>
+                <button class="section-operations" id="id-restar">-</button>
+                <button class="section-operations" id="id-multiplicar">*</button>
+                <button class="section-operations" id="id-dividir">/</button>
+            </div>
+
+            <div class="section section-contain-result">
+                <label for="id-result" class="result">Resultado:</label>
+                <div id="id-resultado"></div>
+            </div>
+        </section>
+    </main>
+
+<script src="./Js/main.js"></script>
+</body>
+
+</html>
