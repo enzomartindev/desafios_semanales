@@ -119,18 +119,17 @@ function enviarPedido() {
 
         if (cantidad > 0) {
             //console.log(cantidad, title, price);
-            let array = [cantidad, title, price * cantidad,"<br>"];
+            let array = [cantidad, title, price * cantidad];
             products.push(array);
 
         }
 
     });
 
-   localStorage.setItem("arrayProductos", products);
+    localStorage.setItem("arrayProductos", JSON.stringify(products) );
 
 }
 
-//cantidad
 
 
 
