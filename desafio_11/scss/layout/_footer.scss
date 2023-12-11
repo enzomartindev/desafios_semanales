@@ -1,2 +1,16 @@
 @use "../asbtracts/variables" as var;
 @use "../asbtracts/mixins" as mix;
+
+footer {
+    grid-area: footer;
+    background: black;
+    padding: 2vh 0 2vh 0;
+    height: min-content;
+    margin-top: auto;
+
+    p {
+        background: radial-gradient(red, white);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+}}

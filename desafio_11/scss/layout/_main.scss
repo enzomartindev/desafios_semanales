@@ -2,25 +2,42 @@
 @use "../asbtracts/mixins" as mix;
 
 .main {
+    grid-area: main;
+    padding: 2vh 10vw 2vh 10vw;
 
     .section {
+
         &__gallery {
-
-            padding: 2vh 10vw 2vh 10vw;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            place-content: center;
+            /*display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin: 0 10vw 0 10vw;
             gap: 1vh;
+            place-items: center;*/
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1vh;
+            justify-content: center;
 
+        }
+
+        &--products {
+            background-color: white;
+
+            h3 {
+                color: red;
+            }
+        }
+
+        .button__container {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 0 10vw 0 10vw;
+            margin-top: 1vh;
         }
     }
 
-    .button__container {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-        padding: 0 10vw 0 10vw;
-    }
+
 }
 
 .main__form {
@@ -38,6 +55,8 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
         &--data {
+            display: flex;
+            flex-direction: column;
             border: 1px solid grey;
             padding: 2vh;
             margin-bottom: 5px;

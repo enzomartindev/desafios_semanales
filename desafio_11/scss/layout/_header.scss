@@ -2,10 +2,15 @@
 @use "../asbtracts/mixins" as mix;
 
 .header{
+    grid-area: header;
+    background: black;
+    height: min-content;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-    color: white;
+    h1 {
+        background: black;
+        background: radial-gradient(red, white);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        text-align: center;
+    }
 }

@@ -9,10 +9,11 @@
     &--product {
 
         border: 1px solid grey;
+        background-color: white;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        width: 300px;
-        height: 400px;
+        width: 250px;
+        height: 350px;
         padding: 1vh;
 
     }
@@ -24,7 +25,7 @@
     }
 
     &__title{
-        background-color:crimson;
+        background-color:red;
         color: white;
         width: 100%;
         text-align: center;
