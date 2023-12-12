@@ -3,7 +3,11 @@
 
 .main {
     grid-area: main;
-    padding: 2vh 10vw 2vh 10vw;
+
+    h3 {
+        color: red;
+        font-size: 2rem;
+    }
 
     .section {
 
@@ -17,7 +21,7 @@
             flex-wrap: wrap;
             gap: 1vh;
             justify-content: center;
-
+            padding: 2vh 10vw 2vh 10vw;
         }
 
         &--products {
@@ -33,7 +37,7 @@
             justify-content: flex-end;
             width: 100%;
             padding: 0 10vw 0 10vw;
-            margin-top: 1vh;
+            margin: 1vh 0 1vh 0;
         }
     }
 
@@ -60,6 +64,15 @@
             border: 1px solid grey;
             padding: 2vh;
             margin-bottom: 5px;
+
+            .button {
+
+                align-self: end;
+
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
         }
 
     }

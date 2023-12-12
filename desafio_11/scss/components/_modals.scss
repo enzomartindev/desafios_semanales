@@ -1,0 +1,53 @@
+@use "../asbtracts/variables" as var;
+@use "../asbtracts/mixins" as mix;
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    border: 1px solid black;
+
+    .modal-area {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+        position: fixed;
+    }
+
+    .modal-content {
+        height: 30vh;
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 40vh;
+        left: 40vw;
+        border: 1px solid black;
+        background-color: white;
+
+        .modal-title {
+            color: black;
+            text-align: center;
+            margin: 1vh 0 1vh 0;
+        }
+
+        .modal-span {
+            margin: 0 0 0 1vw;
+        }
+
+        .modal-exit {
+            font-weight: bolder;
+            text-decoration: none;
+            color: black;
+
+            position: absolute;
+            top: 1vh;
+            right: 1vw;
+            z-index: 3;
+        }
+    }
+}

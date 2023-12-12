@@ -9,6 +9,8 @@
     <meta name="keywords" content="pizerria, pizza a la piedra, pizza">
     <meta name="author" content="Enzo Martín Alfonso Flores, Sebastián Clark">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body class="body">
@@ -25,7 +27,16 @@
                 <span class="input-error"></span>
             </div>
             <div class="section__form--data">
-                <p>Dirección de entrega:</p>
+                <p>Datos de contacto:</p>
+                <label for="email">Email:</label>
+                <input type="text" id="email">
+                <span class="input-error"></span>
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone">
+                <span class="input-error"></span>
+            </div>
+            <div class="section__form--data">
+                <p>Dirección de entrega</p>
                 <label for="street">Calle:</label>
                 <input type="text" id="street">
                 <span class="input-error"></span>
@@ -39,28 +50,39 @@
                 <span id="total-price">Total:</span>
             </div>
             <div class="section__form--data">
-                <p>Información de contacto:</p>
+                <label class="data" for="id-long-desc">Comentarios del pedido:</label>
+                <textarea class="data" name="long-desc" id="id-long-desc" cols="30" rows="5"></textarea>
+                <span class="input-error"></span>
             </div>
             <div class="section__form--data">
                 <p>Enviar Pedido! (Verificá que los datos ingresados sean correctos)</p>
-                <button id="btn-confirm">Enviar!</button>
+                <button class="button button--send" id="btn-confirm">Enviar!</button>
+                <div class="alert">
+                    <p class="alert__text"></p>
+                    <span class="alert__close material-symbols-outlined">close</span>
+                </div>
             </div>
+
             <div class="section__form--data">
-
                 <a class="button button--send button--sm" href="./index.html" id="button-back">Volver</a>
-
             </div>
-
-
-
+            <div class="modal" id="id-modal">
+                <a class="modal-area" href="#"></a>
+                <div class="modal-content">
+                    <h4 class="modal-title">Su pedido ha sido enviado exitosamente!</h4>
+                    <span class="modal-span" id="id-modal-span"></span>
+                    <a class="modal-exit" href="#" title="Cerrar ventana modal" id="close-modal">X</a>
+                </div>
+            </div>
         </section>
+
     </main>
 
     <footer>
         <p>&copy; 2023</p>
     </footer>
     <script src="./js/send-form.js"></script>
-    
+
 </body>
 
 </html>

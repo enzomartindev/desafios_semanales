@@ -60,6 +60,7 @@ ul {
   cursor: default;
 }
 .button--send {
+  width: max-content;
   padding: 1vh;
   background-color: red;
   color: white;
@@ -106,6 +107,51 @@ ul {
 }
 .card__price::before {
   content: "$";
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  border: 1px solid black;
+}
+.modal .modal-area {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  position: fixed;
+}
+.modal .modal-content {
+  height: 30vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 40vh;
+  left: 40vw;
+  border: 1px solid black;
+  background-color: white;
+}
+.modal .modal-content .modal-title {
+  color: black;
+  text-align: center;
+  margin: 1vh 0 1vh 0;
+}
+.modal .modal-content .modal-span {
+  margin: 0 0 0 1vw;
+}
+.modal .modal-content .modal-exit {
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+  z-index: 3;
 }
 
 .alert {
@@ -193,7 +239,10 @@ footer p {
 
 .main {
   grid-area: main;
-  padding: 2vh 10vw 2vh 10vw;
+}
+.main h3 {
+  color: red;
+  font-size: 2rem;
 }
 .main .section__gallery {
   /*display: grid;
@@ -205,6 +254,7 @@ footer p {
   flex-wrap: wrap;
   gap: 1vh;
   justify-content: center;
+  padding: 2vh 10vw 2vh 10vw;
 }
 .main .section--products {
   background-color: white;
@@ -217,7 +267,7 @@ footer p {
   justify-content: flex-end;
   width: 100%;
   padding: 0 10vw 0 10vw;
-  margin-top: 1vh;
+  margin: 1vh 0 1vh 0;
 }
 
 .main__form {
@@ -240,36 +290,38 @@ footer p {
   padding: 2vh;
   margin-bottom: 5px;
 }
+.main__form .section__form--data .button {
+  align-self: end;
+}
+.main__form .section__form--data .button:hover {
+  transform: scale(1.1);
+}
 
 @media (max-width: 1280px) {
-  .body .main .section__gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0 5% 0 5%;
-    gap: 1vh;
+  .body .main__form .modal .modal-content {
+    height: 30vh;
+    width: 40vw;
+    left: 30vw;
   }
 }
 @media (max-width: 992px) {
-  .body .main .section__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 5% 0 5%;
-    gap: 1vh;
+  .body .main__form .modal .modal-content {
+    height: 30vh;
+    width: 50vw;
+    left: 25vw;
   }
 }
 @media (max-width: 768px) {
-  .body .main .section__gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 5% 0 5%;
-    gap: 1vh;
+  .body .main__form .modal .modal-content {
+    height: 30vh;
+    width: 60vw;
+    left: 20vw;
   }
 }
 @media (max-width: 480px) {
-  .body .main .section__gallery {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    margin: 0 5% 0 5%;
-    gap: 1vh;
+  .body .main__form .modal .modal-content {
+    height: 30vh;
+    width: 80vw;
+    left: 10vw;
   }
 }/*# sourceMappingURL=main.css.map */
