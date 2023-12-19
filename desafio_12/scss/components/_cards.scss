@@ -1,0 +1,33 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+
+.card {
+    display: grid;
+    grid-template-rows: auto 285px 30px;
+    place-items: center;
+    border: 1px solid azure;
+    width: min-content;
+    text-align: center;
+    height: auto;
+    background-color: black;
+
+    &:hover{
+        transform: scale(1.01);
+        cursor: pointer;
+    }
+
+    h3,
+    h4 {
+        color: azure;
+        padding: 0.5vh;
+        width: 100%;
+    }
+
+    img {
+        width: 200px;
+        height: 285px;
+
+    }
+
+}

@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+
+.footer {
+    background-color: var.$headerColor;
+    color: azure;
+    margin-top: auto;
+    padding: 1vh;
+}

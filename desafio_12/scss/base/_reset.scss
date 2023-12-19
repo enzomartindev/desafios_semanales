@@ -1,0 +1,18 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: azure;
+}

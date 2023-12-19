@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: azure;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 285px 30px;
+  place-items: center;
+  border: 1px solid azure;
+  width: min-content;
+  text-align: center;
+  height: auto;
+  background-color: black;
+}
+.card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+.card h3,
+.card h4 {
+  color: azure;
+  padding: 0.5vh;
+  width: 100%;
+}
+.card img {
+  width: 200px;
+  height: 285px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #1B2838;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  background-color: #171A21;
+  color: azure;
+}
+.header .navbar {
+  align-self: flex-start;
+}
+.header .navbar__menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+.header .link-active {
+  color: red !important;
+}
+
+.main {
+  padding: 1vh;
+}
+.main .section--movies {
+  display: flex;
+  gap: 1vh;
+  width: 100%;
+}
+
+.footer {
+  background-color: #171A21;
+  color: azure;
+  margin-top: auto;
+  padding: 1vh;
+}/*# sourceMappingURL=main.css.map */
