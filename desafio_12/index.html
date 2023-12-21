@@ -20,19 +20,34 @@
     </header>
 
     <main class="main">
-        <section class="section">
+        <section class="section section--form">
+
             <div class="search__form">
                 <input type="text" name="search-product" id="id-search-product" placeholder="Buscar Pelìculas">
                 <a title="Buscar" href="#"><img id="search-icon" src="./images/search-icon.png" alt="Buscar"></a>
             </div>
-        </section>
-        <section class="section">
+
             <div class="add__form">
-                <a class="add__form--item" href="#">Añadir película</a>
+                <a class="add__form--item" href="#" id="add-movie">Añadir película</a>
             </div>
+
         </section>
 
-        <section class="section section--movies" id="section-movies">
+        <section class="section section--main">
+
+            <div class="movies--filter" id="movies--filter">
+                <p>Filtrar por Año:</p>
+                <ul class="year-filter">
+                    <li class="year-filter-item">2023</li>
+                    <li class="year-filter-item">2022</li>
+                    <li class="year-filter-item">2021</li>
+                    <li class="year-filter-item">Borrar</li>
+                </ul>
+            </div>
+            <div class="section--movies" id="section-movies">
+
+
+            </div>
 
         </section>
 
@@ -43,6 +58,8 @@
     </footer>
 
     <script src="./js/app.js"></script>
+
+
 
 </body>
 

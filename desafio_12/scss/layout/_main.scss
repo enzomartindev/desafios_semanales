@@ -2,11 +2,154 @@
 @use "../abstracts/mixins" as mix;
 
 .main {
-    padding: 1vh;
+    padding: 1vh 10vh 1vh 10vh;
 
-    .section--movies {
-        display: flex;
-        gap: 1vh;
-        width: 100%
+    .section {
+
+        margin: 2vh 0 2vh 0;
+
+        .search__form {
+
+            border: 1px solid white;
+            border-radius: 5px;
+            width: fit-content;
+            height: min-content;
+            background-color: white;
+            padding: 1vh;
+
+
+            & input[type="text"] {
+
+                border: none;
+                outline: none;
+                width: 35vw;
+            }
+
+            &:focus-within {
+                border: 1px solid aqua;
+
+            }
+
+            & img {
+                cursor: pointer;
+            }
+        }
+
+        .add__form {
+
+            #add-movie {
+
+                background-color: lightseagreen;
+                border: 1px solid aqua;
+                padding: 1vh;
+                border-radius: 5px;
+
+                &:hover {
+
+                    background-color: seagreen;
+                }
+
+            }
+        }
+
+        &--main {
+            display: flex;
+            flex-direction: row;
+            padding: 5vh;
+
+            .movies--filter {
+
+                color: azure;
+                width: fit-content;
+                width: auto;
+                border: 1px solid white;
+                padding: 1vh;
+                height: 100%;
+
+                & p {
+
+                    width: max-content;
+                    margin-bottom: 1vh;
+                }
+
+                .year-filter-item {
+
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+
+                    &--active {
+                        color: red;
+                    }
+                }
+
+            }
+        }
+
+        &--form {
+            display: flex;
+            gap: 1vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--movies {
+            display: flex;
+            gap: 1vh;
+            width: 100%;
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            .no-results {
+                color: white;
+            }
+
+            .add-product {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: white;
+                padding: 2vh;
+                border: 1px solid aqua;
+                border-radius: 5px;
+
+                .section__add_movie__form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    &--data {
+                        margin-top: 1vh;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        #id-save {
+
+                            background-color: lightseagreen;
+                            border: 1px solid aqua;
+                            padding: 1vh;
+                            border-radius: 5px;
+
+                            &:hover {
+
+                                background-color: seagreen;
+                                cursor: pointer;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        .contact {
+            color: white;
+        }
+
     }
 }

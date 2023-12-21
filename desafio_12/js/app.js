@@ -1,10 +1,17 @@
 let currentPage = "home";
 const sectionMovies = document.getElementById("section-movies");
+const searchBar = document.getElementById("id-search-product");
+const searchIcon = document.getElementById("search-icon");
+const yearFilter = document.querySelectorAll(".year-filter-item");
+
+
+
 const nav = {
     home: document.getElementById("home"),
-    contact: document.getElementById("contact")
+    contact: document.getElementById("contact"),
+    add: document.getElementById("add-movie")
 };
-const links = [nav.home, nav.contact];
+const links = [nav.home, nav.contact, nav.add];
 
 //carga el contenido por primera vez con el home
 getContentHTML(currentPage);
@@ -20,10 +27,43 @@ function getContentHTML(pageName) {
     xhr.onload = () => {
         if (xhr.status === 200) {
             sectionMovies.innerHTML = xhr.response;
-            setActiveLink(links, nav[pageName]);
+
             //Si la pagina que se debe cargar es el home, genero las cards con las movies
+            const yearFilters = document.getElementById("movies--filter");
+
             if (pageName == "home") {
                 movies.forEach(movie => { createCard(movie) });
+                setActiveLink(links, nav[pageName]);
+                yearFilters.style.display = "block";
+            }
+            if (pageName == "contact") {
+                setActiveLink(links, nav[pageName]);
+                yearFilters.style.display = "none";
+            }
+            if (pageName == "add-movie") {
+                yearFilters.style.display = "none";
+
+                const inputTitle = document.getElementById("id-title");
+                const inputYear = document.getElementById("id-year");
+                const inputDescription = document.getElementById("id-desc");
+                const inputImg = document.getElementById("id-photo");
+                const inputBtnSave = document.getElementById("id-save");
+
+                inputBtnSave.onclick = saveMovie;
+
+                function saveMovie() {
+
+                    console.log(inputTitle.value);
+                    console.log(inputYear.value);
+                    console.log(inputDescription.value);
+                    console.log(inputImg.value);
+
+                    movies.push();
+                }
+
+
+
+
             }
         }
     };
@@ -47,6 +87,7 @@ function setActiveLink(links, linkActive) {
         link.className = "";
     }
     linkActive.className = "link-active";
+
 }
 
 /*Movies*/
@@ -88,7 +129,23 @@ const movies =
                         Rose se verá obligada a afrontar a su problemático pasado para sobrevivir y escapar de su terrorífica nueva realidad.`,
             img: "./images/SMILE.jpg",
             year: "2022"
+        },
+        {
+            title: "Medusa: Queen of the Serpents",
+            description: `Después de ser mordida por una serpiente, la vida de una joven comienza a dar un giro hacia lo peor cuando un virus mortal ataca su cuerpo.`,
+            img: "./images/medusa.jpg",
+            year: "2021"
+        },
+        {
+            title: "Spider-Man: Sin camino a casa",
+            description: `Peter Parker está desenmascarado y ya no puede separar su vida normal de las altas 
+                    apuestas de ser un superhéroe. Cuando le pide ayuda al Doctor Strange, lo que está en juego 
+                    se vuelve aún más peligroso, lo que lo obliga a descubrir lo que realmente significa ser Spider-Man.`,
+            img: "./images/spiderman.jpg",
+            year: "2021"
         }
+
+
     ];
 
 function Movie(name, description, img, year) {
@@ -117,3 +174,80 @@ function createCard(movie) {
 
     sectionMovies.appendChild(figure);
 }
+
+/*Busqueda*/
+searchIcon.addEventListener("click", () => {
+    searchMovies(searchBar.value);
+});
+
+searchBar.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13 || event.key === 'Enter') {
+        searchMovies(searchBar.value);
+    }
+}
+);
+
+function searchMovies(param) {
+
+    if (document.querySelector(".no-results")) {
+
+        sectionMovies.removeChild(document.querySelector(".no-results"))
+
+    }
+
+    param = param.toLowerCase();
+    let results = false;
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        let title = card.innerText.toLowerCase();
+
+        if (title.match(param)) {
+
+            card.style.display = "grid";
+            results = true;
+
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    if (!results) {
+
+        showNoResults();
+
+    }
+
+}
+
+function showNoResults() {
+
+    const h3 = document.createElement("h3");
+    h3.innerText = "No se encontraton resultados";
+    h3.className = "no-results";
+    sectionMovies.appendChild(h3);
+}
+
+
+/*filtro por año*/
+
+
+
+yearFilter.forEach(year => {
+
+    year.addEventListener("click", (year) => {
+
+        if (year.target.innerText == "Borrar") {
+
+            getContentHTML(currentPage);
+
+        }
+
+        searchMovies(year.target.innerText);
+
+    });
+});
+
