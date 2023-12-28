@@ -69,6 +69,8 @@ const links = [nav.home, nav.contact];
 //Carga el contenido por primera vez con el home
 getContentHTML(currentPage);
 
+
+
 //Función para cargar el contenido html
 function getContentHTML(pageName) {
 
@@ -91,6 +93,11 @@ function getContentHTML(pageName) {
 for (let i = 0; i < links.length; i++) {
     const link = links[i];
     link.addEventListener('click', (e) => {
+
+        /*e.preventDefault();
+        let pageName = e.target.id;
+
+        history.pushState({ page: pageName }, pageName, pageName);*/
         getContentHTML(e.target.id);
 
     });
@@ -115,9 +122,10 @@ function executeScript(page) {
         const sectionMovies = document.getElementById("section-movies");
         const searchBar = document.getElementById("id-search-product");
         const searchIcon = document.getElementById("search-icon");
-        const yearFilter = document.querySelectorAll(".year-filter-item");
+        //const yearFilter = document.querySelectorAll(".year-filter");
+        const yearFilter = document.querySelector(".year-filter");
         const addMovie = document.getElementById("add-movie")
-
+        const years = Array.from(new Set(movies.map((item) => item.year)));
 
 
         movies.forEach(movie => { createCard(movie) });
@@ -209,7 +217,22 @@ function executeScript(page) {
         }
 
         /*filtro por año*/
-        yearFilter.forEach(year => {
+
+
+        years.forEach(year => {
+
+            const p = document.createElement("p");
+
+            p.className = "year-filter-item";
+            p.innerText = year;
+
+            yearFilter.append(p);
+
+
+        });
+
+
+        yearFilter.childNodes.forEach(year => {
 
             year.addEventListener("click", (year) => {
 
@@ -249,18 +272,49 @@ function executeScript(page) {
 
             }
 
-            movies.push(newMovie);
-            alert("Pelicula añadida!");
-            getContentHTML("home");
+
+            if (validate()) {
+
+                movies.push(newMovie);
+                alert("Pelicula añadida!");
+                getContentHTML("home");
+
+            } else {
+                alert("Debes completar todos los campos");
+            }
 
         }
 
+        function validate() {
 
+            if (inputTitle.value && inputDescription.value && inputYear.value) {
+                return true
+            }
+
+            return false;
+
+        }
 
 
     }
 }
 
+/* ****************** HISTORY  ****************** */
+/*const btnBack = document.getElementById("back");
+const btnForward = document.getElementById("forward");
 
+btnBack.addEventListener('click', () => {
+    history.back();
+});
 
+btnForward.addEventListener('click', () => {
+    history.forward();
+});
 
+window.onpopstate = (e) => {
+    if (e.state) {
+        getContentHTML(e.state.page);
+    } else {
+        getContentHTML("home");
+    }
+};*/
