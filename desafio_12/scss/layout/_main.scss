@@ -66,6 +66,7 @@
                 padding: 1vh;
                 height: 100%;
 
+
                 & p {
 
                     width: max-content;
@@ -106,50 +107,68 @@
                 color: white;
             }
 
-            .add-product {
 
+        }
+
+    }
+
+    .add-product {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding: 2vh;
+        border: 1px solid aqua;
+        border-radius: 5px;
+
+
+        .section__add_movie__form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            &--data {
+                margin-top: 1vh;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                background-color: white;
-                padding: 2vh;
-                border: 1px solid aqua;
-                border-radius: 5px;
+                width: 100%;
 
-                .section__add_movie__form {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                .data__input {
+                    width: 100%;
 
-                    &--data {
-                        margin-top: 1vh;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
+                }
 
-                        #id-save {
+                #id-save {
 
-                            background-color: lightseagreen;
-                            border: 1px solid aqua;
-                            padding: 1vh;
-                            border-radius: 5px;
+                    background-color: lightseagreen;
+                    border: 1px solid aqua;
+                    padding: 1vh;
+                    border-radius: 5px;
 
-                            &:hover {
+                    &:hover {
 
-                                background-color: seagreen;
-                                cursor: pointer;
-                            }
-                        }
-
+                        background-color: seagreen;
+                        cursor: pointer;
                     }
                 }
 
             }
         }
 
-        .contact {
-            color: white;
-        }
+
 
     }
+
+    .contact {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
 }

@@ -1,98 +1,9 @@
 let currentPage = "home";
-const sectionMovies = document.getElementById("section-movies");
-const searchBar = document.getElementById("id-search-product");
-const searchIcon = document.getElementById("search-icon");
-const yearFilter = document.querySelectorAll(".year-filter-item");
-
-
-
-const nav = {
-    home: document.getElementById("home"),
-    contact: document.getElementById("contact"),
-    add: document.getElementById("add-movie")
-};
-const links = [nav.home, nav.contact, nav.add];
-
-//carga el contenido por primera vez con el home
-getContentHTML(currentPage);
-
-//Función para cargar el contenido html
-function getContentHTML(pageName) {
-    const filepath = `./${pageName}.html`;
-
-    const xhr = new XMLHttpRequest();
-
-    xhr.open("get", filepath);
-
-    xhr.onload = () => {
-        if (xhr.status === 200) {
-            sectionMovies.innerHTML = xhr.response;
-
-            //Si la pagina que se debe cargar es el home, genero las cards con las movies
-            const yearFilters = document.getElementById("movies--filter");
-
-            if (pageName == "home") {
-                movies.forEach(movie => { createCard(movie) });
-                setActiveLink(links, nav[pageName]);
-                yearFilters.style.display = "block";
-            }
-            if (pageName == "contact") {
-                setActiveLink(links, nav[pageName]);
-                yearFilters.style.display = "none";
-            }
-            if (pageName == "add-movie") {
-                yearFilters.style.display = "none";
-
-                const inputTitle = document.getElementById("id-title");
-                const inputYear = document.getElementById("id-year");
-                const inputDescription = document.getElementById("id-desc");
-                const inputImg = document.getElementById("id-photo");
-                const inputBtnSave = document.getElementById("id-save");
-
-                inputBtnSave.onclick = saveMovie;
-
-                function saveMovie() {
-
-                    console.log(inputTitle.value);
-                    console.log(inputYear.value);
-                    console.log(inputDescription.value);
-                    console.log(inputImg.value);
-
-                    movies.push();
-                }
-
-
-
-
-            }
-        }
-    };
-
-    xhr.send();
-};
-
-//Agregar oyente de evento click en cada link.
-for (let i = 0; i < links.length; i++) {
-    const link = links[i];
-
-    link.addEventListener('click', (e) => {
-        getContentHTML(e.target.id);
-    });
-}
-
-// Activar el link de la página actual.
-function setActiveLink(links, linkActive) {
-    for (let i = 0; i < links.length; i++) {
-        const link = links[i];
-        link.className = "";
-    }
-    linkActive.className = "link-active";
-
-}
+const defaultIMG = "./images/defaultMovie.jpg"
+const main = document.getElementById("main");
 
 /*Movies*/
-
-const movies =
+let movies =
     [
         {
             title: "LA MALDICIÓN DEL QUEEN MARY",
@@ -148,106 +59,208 @@ const movies =
 
     ];
 
-function Movie(name, description, img, year) {
-    this.name = name
-    this.description = description;
-    this.img = img;
-    this.year = year;
-}
+const nav = {
+    home: document.getElementById("home"),
+    contact: document.getElementById("contact")
+};
 
-function createCard(movie) {
-    const figure = document.createElement("figure");
-    const h3 = document.createElement("h3");
-    const img = document.createElement("img");
-    const h4 = document.createElement("h4");
+const links = [nav.home, nav.contact];
 
-    h3.innerText = movie.title;
-    img.src = movie.img;
-    img.alt = movie.title;
-    h4.innerText = movie.year;
+//Carga el contenido por primera vez con el home
+getContentHTML(currentPage);
 
-    figure.className = "card";
-    figure.appendChild(h3);
-    figure.appendChild(img);
-    figure.appendChild(h4);
+//Función para cargar el contenido html
+function getContentHTML(pageName) {
 
+    const filepath = `./${pageName}.html`;
+    const xhr = new XMLHttpRequest();
 
-    sectionMovies.appendChild(figure);
-}
+    xhr.open("get", filepath);
 
-/*Busqueda*/
-searchIcon.addEventListener("click", () => {
-    searchMovies(searchBar.value);
-});
-
-searchBar.addEventListener("keydown", function (event) {
-    if (event.keyCode === 13 || event.key === 'Enter') {
-        searchMovies(searchBar.value);
-    }
-}
-);
-
-function searchMovies(param) {
-
-    if (document.querySelector(".no-results")) {
-
-        sectionMovies.removeChild(document.querySelector(".no-results"))
-
-    }
-
-    param = param.toLowerCase();
-    let results = false;
-
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-
-        let title = card.innerText.toLowerCase();
-
-        if (title.match(param)) {
-
-            card.style.display = "grid";
-            results = true;
-
-        } else {
-            card.style.display = "none";
+    xhr.onload = () => {
+        if (xhr.status === 200) {
+            main.innerHTML = xhr.response;
+            executeScript(pageName);
         }
+    };
+
+    xhr.send();
+};
+
+//Agregar oyente de evento click en cada link.
+for (let i = 0; i < links.length; i++) {
+    const link = links[i];
+    link.addEventListener('click', (e) => {
+        getContentHTML(e.target.id);
 
     });
 
-    if (!results) {
+}
 
-        showNoResults();
-
+//Activar el link de la página actual.
+function setActiveLink(links, linkActive) {
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        link.className = "";
     }
+    linkActive.className = "link-active";
 
 }
 
-function showNoResults() {
+//Ejecuta el script de cada sección
+function executeScript(page) {
 
-    const h3 = document.createElement("h3");
-    h3.innerText = "No se encontraton resultados";
-    h3.className = "no-results";
-    sectionMovies.appendChild(h3);
-}
+    if (page == "home") {
+
+        const sectionMovies = document.getElementById("section-movies");
+        const searchBar = document.getElementById("id-search-product");
+        const searchIcon = document.getElementById("search-icon");
+        const yearFilter = document.querySelectorAll(".year-filter-item");
+        const addMovie = document.getElementById("add-movie")
 
 
-/*filtro por año*/
+
+        movies.forEach(movie => { createCard(movie) });
+        setActiveLink(links, nav[page]);
+
+        function createCard(movie) {
+            const figure = document.createElement("figure");
+            const h3 = document.createElement("h3");
+            const img = document.createElement("img");
+            const h4 = document.createElement("h4");
+
+            h3.innerText = movie.title;
+            img.src = movie.img;
+            img.alt = movie.title;
+            h4.innerText = movie.year;
+
+            figure.className = "card";
+            figure.appendChild(h3);
+            figure.appendChild(img);
+            figure.appendChild(h4);
 
 
+            sectionMovies.appendChild(figure);
+        }
 
-yearFilter.forEach(year => {
+        //Oyente a boton agregar pelicula
+        addMovie.addEventListener('click', (e) => {
+            getContentHTML(e.target.id);
+        });
 
-    year.addEventListener("click", (year) => {
+        /*Busqueda*/
+        //Boton de busqueda
+        searchIcon.addEventListener("click", () => {
+            searchMovies(searchBar.value);
+        });
 
-        if (year.target.innerText == "Borrar") {
+        //Buscar al apretar enter
+        searchBar.addEventListener("keydown", function (event) {
+            if (event.keyCode === 13 || event.key === 'Enter') {
+                searchMovies(searchBar.value);
+            }
+        }
+        );
 
-            getContentHTML(currentPage);
+        //Funcion para buscar peliculas
+        function searchMovies(param) {
+
+            if (document.querySelector(".no-results")) {
+
+                sectionMovies.removeChild(document.querySelector(".no-results"))
+
+            }
+
+            param = param.toLowerCase();
+            let results = false;
+
+            const cards = document.querySelectorAll(".card");
+
+            cards.forEach(card => {
+
+                let title = card.innerText.toLowerCase();
+
+                if (title.match(param)) {
+
+                    card.style.display = "grid";
+                    results = true;
+
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+            if (!results) {
+
+                showNoResults();
+
+            }
 
         }
 
-        searchMovies(year.target.innerText);
+        //Mostrar mensaje de no se encontraron resultados
+        function showNoResults() {
 
-    });
-});
+            const h3 = document.createElement("h3");
+            h3.innerText = "No se encontraton resultados";
+            h3.className = "no-results";
+            sectionMovies.appendChild(h3);
+        }
+
+        /*filtro por año*/
+        yearFilter.forEach(year => {
+
+            year.addEventListener("click", (year) => {
+
+                if (year.target.innerText == "Borrar") {
+
+                    getContentHTML(currentPage);
+
+                }
+
+                searchMovies(year.target.innerText);
+
+            });
+        });
+    }
+
+    if (page == "contact") {
+        setActiveLink(links, nav[page]);
+
+    }
+    if (page == "add-movie") {
+
+        const inputTitle = document.getElementById("id-title");
+        const inputYear = document.getElementById("id-year");
+        const inputDescription = document.getElementById("id-desc");
+        const inputImg = document.getElementById("id-photo");
+        const inputBtnSave = document.getElementById("id-save");
+
+        inputBtnSave.onclick = saveMovie;
+
+        function saveMovie() {
+
+            const newMovie = {
+                title: inputTitle.value,
+                description: inputDescription.value,
+                img: defaultIMG,
+                year: inputYear.value
+
+            }
+
+            movies.push(newMovie);
+            alert("Pelicula añadida!");
+            getContentHTML("home");
+
+        }
+
+
+
+
+    }
+}
+
+
+
 
