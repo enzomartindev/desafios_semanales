@@ -1,0 +1,52 @@
+.main {
+
+    grid-area: main;
+    background-color: #1B2838;
+    padding: 1vh;
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+
+    .taskForce {
+        display: flex;
+        gap: 5px;
+
+    }
+
+    .taskList {
+
+
+        color: black;
+        padding: 1vh;
+        width: 30vw;
+
+        .listItem {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0.2vh;
+            width: 100%;
+
+            li {
+                display: flex;
+                gap: 5px;
+
+                input {
+                    width: 100%;
+                }
+
+                button {
+                    color: red;
+                    padding: 0.1vh;
+                    font-weight: bold;
+
+                }
+            }
+
+        }
+
+    }
+
+
+}
