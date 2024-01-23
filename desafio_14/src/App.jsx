@@ -10,6 +10,8 @@ const App = () => {
 
     const [notes, setNotes] = useState([]);
 
+    const [favorites, setFavorites] = useState([]);
+
 
     const NotesForm = ()=> {
 
@@ -58,7 +60,10 @@ const App = () => {
                 //Resetea el input de " nueva nota"
                 setInputNewNote("");
 
+                console.log(favorites.includes(newNote.id));
+
             }
+
         };
 
 
@@ -66,23 +71,21 @@ const App = () => {
             <div className="noteForm">
                 <p>Nueva nota:</p>
                 <div className="noteForm__data">
-                    <div className="noteForm__data--input">
-                        <label htmlFor="title">Título: </label>
-                        <input
-                            type="text"
-                            id="title"
-                            value={inputNewNote}
-                            onChange={(e) => handleOnChangeNewNote(e)}  />
-                    </div>
-                    <div className="noteForm__data--input">
-                        <label htmlFor="description">Descripción: </label>
-                        <textarea
-                            id="description"
-                            value={inputNewNoteDesc}
-                            onChange={(e) => handleOnChangeNewNoteDesc(e)}  />
-                    </div>
+                    <input className="noteForm__data--input"
+                        type="text"
+                        id="title"
+                        placeholder="Título"
+                        value={inputNewNote}
+                        onChange={(e) => handleOnChangeNewNote(e)}  />
+                    <textarea className="noteForm__data--input"
+                        placeholder="Descripción"
+                        id="description"
+                        value={inputNewNoteDesc}
+                        onChange={(e) => handleOnChangeNewNoteDesc(e)}  />
                 </div>
-                <button onClick={handleOnClickAddNote}>Agregar Nota</button>
+                <div className="noteForm--btn">
+                    <button onClick={handleOnClickAddNote}>Agregar Nota</button>
+                </div>
             </div>
         );
     };
@@ -131,16 +134,36 @@ const App = () => {
 
         };
 
-        const handleOnClickDeleteFavorite= () => {
+        const handleOnClickFavorite= (id) => {
 
-            console.log("Se añadio a favoritos");
+            const index = notes.findIndex((note) => note.id === id);
 
+            // Clona la lista de notas favoritas
+            const cloneFavorites = [...favorites];
+
+            // Si la nota ya está marcada como favorita, la elimina de la lista de favoritos
+            if (favorites.includes(id)) {
+                cloneFavorites.splice(cloneFavorites.indexOf(id), 1);
+            } else {
+                // Sino, la agrega a la lista de favoritos
+                cloneFavorites.push(id);
+            }
+
+            // Actualiza el estado de la lista de favoritos
+            setFavorites(cloneFavorites);
+
+            // Actualiza el estado de la nota original
+            const cloneNotes = [...notes];
+            cloneNotes[index].favorite = !cloneNotes[index].favorite;
+            setNotes(cloneNotes);
+
+            console.log(cloneNotes[index].favorite);
 
         };
 
 
         return(
-            <ul className="noteList">
+            <ul className={`${notes.length > 0 ? "noteList": ""}`}>
                 {notes.map((note) => (
                     <li key={note.id} className="listItem">
                         <input
@@ -153,14 +176,21 @@ const App = () => {
                             value={note.description}
                             onChange={(e) => handleOnChangeModifyNoteDesc(note.id, e.target.value)}/>
                         <div className="listItem--buttons">
-                            <button onClick={() => handleOnClickDeleteNote(note.id)}>❌</button>
-                            <button onClick={() => handleOnClickDeleteFavorite(note.id)}>⭐</button>
+                            <div className="tooltip">
+                                <span className="tooltiptext">Eliminar nota</span>
+                                <button className="btn"
+                                    onClick={() => handleOnClickDeleteNote(note.id)}>❌</button>
+                            </div>
+                            <div className="tooltip">
+                                <span className={`tooltiptext ${favorites.includes(note.id) ? "tooltipDelete" : "tooltipAdd"}`}></span>
+                                <button className={`btn ${favorites.includes(note.id) ? "btnFav" : "btnNotFav"}`}
+                                    onClick={() => handleOnClickFavorite(note.id)}>⭐</button>
+                            </div>
                         </div>
                     </li>
                 ))}
             </ul>
         );
-
 
     };
 
