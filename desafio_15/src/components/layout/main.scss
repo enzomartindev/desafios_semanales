@@ -1,0 +1,33 @@
+.main {
+
+    grid-area: main;
+    background-color: white;
+    padding: 1vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+
+    /*.searchForm__container {
+
+        &--input {}
+
+        &--btn {}
+    }
+
+    .weather__container {
+
+        padding: 1vh;
+        border: 1px solid black;
+
+        &--city {}
+
+        &--temp {}
+
+        &--weather {}
+
+        &--error {}
+    }*/
+
+}
