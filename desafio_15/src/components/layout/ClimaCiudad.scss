@@ -1,0 +1,61 @@
+.weather__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1vh;
+    width: 500px;
+
+    &__city {
+
+        font-size: 1rem;
+        margin-bottom: 2vh;
+    }
+
+    &__weather {
+
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 1vh;
+        margin-bottom: 2vh;
+
+        &--temp {
+
+            .celsius {
+                font-size: 2.5rem;
+                color: #48484a;
+
+            }
+
+
+        }
+    }
+
+    &__error {
+
+        text-align: center;
+        padding: 1vh;
+        width: 100%;
+        background-color: rgb(216, 72, 72);
+        border-radius: 5px;
+        color: white;
+    }
+
+    &__msg {
+        text-align: center;
+        padding: 1vh;
+        width: 100%;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        &--hot {
+            color: red;
+        }
+
+        &--cold {
+            color: blue;
+        }
+    }
+}

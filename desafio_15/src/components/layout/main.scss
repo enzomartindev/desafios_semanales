@@ -2,32 +2,53 @@
 
     grid-area: main;
     background-color: white;
-    padding: 1vh;
+    padding: 0 1vh 1vh 1vh;
     color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1vh;
 
-    /*.searchForm__container {
+    .searchForm {
 
-        &--input {}
+        display: flex;
+        justify-content: center;
+        background-color: #f2f2f2;
+        width: 100%;
+        padding: 3vh;
 
-        &--btn {}
+        &__container {
+
+            display: flex;
+            border-radius: 5px;
+            width: 500px;
+
+            &--input {
+                //border: 1px solid grey;
+                border: none;
+                border-radius: 5px 0 0 5px;
+                width: 100%;
+                outline: none;
+                padding: 1vh;
+            }
+
+            &--btn {
+
+                //border: 1px solid grey;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                background-color: #171A21;
+                color: white;
+                height: max-content;
+                padding: 1vh;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: #686b74;
+                }
+            }
+        }
+
+
     }
-
-    .weather__container {
-
-        padding: 1vh;
-        border: 1px solid black;
-
-        &--city {}
-
-        &--temp {}
-
-        &--weather {}
-
-        &--error {}
-    }*/
-
 }
