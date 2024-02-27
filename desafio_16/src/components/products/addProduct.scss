@@ -1,0 +1,28 @@
+.cardProductActions {
+
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+
+    .btn {
+        width: 2rem;
+        font-size: large;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .buttonRemoveFromCart {
+        color: red;
+
+    }
+
+    .buttonAddtoCart {
+        color: green;
+    }
+}

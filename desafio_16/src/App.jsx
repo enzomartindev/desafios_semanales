@@ -5,7 +5,7 @@ import Footer from "./components/layout/Footer";
 //import { useState } from "react";
 
 import "./app.scss";
-import ProductList from "./components/ProductList ";
+import ProductList from "./components/products/ProductList ";
 
 const App = () => {
 
