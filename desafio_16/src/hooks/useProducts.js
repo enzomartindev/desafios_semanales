@@ -45,7 +45,7 @@ const useProducts = () => {
             id: values.id ?? generateId(),
             name: values.name ?? "",
             description: values.description ?? "",
-            image: values.image ?? "/images/defaultphone.jpg",
+            img: values.img ?? "/images/defaultphone.jpg",
             stock: Number(values.stock) ?? 0,
             price: Number(values.price) ?? 0,
             isPromotion: values.isPromotion ?? false,

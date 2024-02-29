@@ -1,27 +1,14 @@
-.productForm {
+.form-product {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
 
-    background-color: beige;
-    padding: 5vh;
+    .form-product__image {
 
-    .product__details {
-        display: flex;
-        flex-direction: column;
-        gap: 1vh;
+        width: 200px;
+        object-fit: contain;
+        align-self: center;
 
-        .input {
-            padding: 0.5rem;
-        }
-
-        .title {}
-
-        .description {}
-
-        .price {}
-
-        .stock {}
-
-        .img {}
     }
-
 
 }

@@ -27,6 +27,7 @@ const ProductForm = (props) => {
         },
     });
 
+
     return (
         <Box
             component="form"
@@ -82,8 +83,8 @@ const ProductForm = (props) => {
 
             <InputField
                 label="Ruta de la imagen"
-                name="image"
-                value={formik.values.image}
+                name="img"
+                value={formik.values.img}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 error={formik.touched.image && Boolean(formik.errors.image)}
@@ -93,7 +94,7 @@ const ProductForm = (props) => {
             <Box
                 className="form-product__image"
                 component="img"
-                src={formik.values.image}
+                src={formik.values.img}
                 alt="Fotografía del producto"/>
 
             <Button type="submit">Guardar</Button>
@@ -118,10 +119,9 @@ ProductForm.propTypes = {
         id: PropTypes.number,
         name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
         stock: PropTypes.number.isRequired,
-        price: PropTypes.number.isRequired,
-        isPromotion: PropTypes.bool.isRequired,
+        price: PropTypes.number.isRequired
     }),
 };
 
@@ -129,10 +129,9 @@ ProductForm.defaultProps = {
     initialValues: {
         name: "",
         description: "",
-        image: "/images/default.jpg",
+        img: "/images/defaultphone.jpg",
         stock: 0,
         price: 0,
-        isPromotion: false,
     },
 };
 

@@ -1,0 +1,13 @@
+.productCard--create {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--img {
+        //align-self: flex-start;
+        object-fit: contain;
+        background-color: red;
+    }
+
+}

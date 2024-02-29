@@ -7,6 +7,12 @@
 
     .productCard {
 
+        .productCard__actions {
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
         display: flex;
         flex-direction: column;
         padding: 5px;
@@ -15,6 +21,7 @@
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         gap: 10px;
         width: 200px;
+        padding-bottom: 1vh;
 
         .card__img {
 

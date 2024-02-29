@@ -26,8 +26,8 @@ const validationSchema = yup.object({
     description: yup
         .string("Ingresa tu consulta")
         .min(15, "Ingresa una consulta que tenga entre 15 y 150 carateres"),
-    image: yup
-        .string("Ingresa el stock")
+    img: yup
+        .string("Ingresa la imagen")
         .matches(REGEX_IMAGE_PATH, MESSAGE_IMAGE_PATH_INVALID)
         .required(MESSAGE_REQUIRED),
 });
